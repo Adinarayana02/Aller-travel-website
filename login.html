@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #191818;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+  
+  
+</head>
+<body>
+
+  <div class="login-container">
+    <form id="loginForm" onsubmit="return false;">
+      <div class="form-group" id="mobileNumberSection">
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" required>
+        <button onclick="sendOTP()">Get OTP</button>
+      </div>
+
+      <div class="form-group" id="otpSection" style="display: none;">
+        <label for="otp">OTP:</label>
+        <input type="text" id="otp" name="otp" required>
+        <button onclick="submitOTP()">Submit OTP</button>
+      </div>
+
+      <div class="form-group" id="userInfoSection" style="display: none;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button onclick="submitUserInfo()">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function sendOTP() {
+      // Simulate server-side OTP generation
+      alert('Simulating OTP generation. OTP sent to your mobile number.');
+      document.getElementById('mobileNumberSection').style.display = 'none';
+      document.getElementById('otpSection').style.display = 'block';
+    }
+
+    function submitOTP() {
+      // Simulate server-side OTP verification
+      alert('Simulating OTP verification. Proceeding to user information.');
+      document.getElementById('otpSection').style.display = 'none';
+      document.getElementById('userInfoSection').style.display = 'block';
+    }
+
+    function submitUserInfo() {
+      // Simulate successful form submission
+      alert('Form submitted successfully! Returning to the home page.');
+      // Redirect to the home page (change the URL accordingly)
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+</html>
